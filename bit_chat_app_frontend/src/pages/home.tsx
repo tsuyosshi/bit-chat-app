@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useRecoilValue } from 'recoil';
 
+import * as env from '../consts/env.json';
 import { currentAuthenticatedUser } from '../hooks/auth/useAuth';
 
 const Home = () => {
@@ -10,7 +11,7 @@ const Home = () => {
   const { token } = useRecoilValue(currentAuthenticatedUser);
 
   const getEmail = async () => {
-    const res = await axios.get('http://localhost:8080/user', {
+    const res = await axios.get(`${env.APIGatewayURL}/user`, {
       headers: {
         Authorization: token,
       },

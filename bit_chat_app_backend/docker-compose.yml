@@ -1,20 +1,9 @@
 version: "3"
 services:
-  api:
-    build:
-      dockerfile: ./api/Dockerfile
-    container_name: bit_chat_app_api
-    ports:
-      - 7000:8080
-    hostname: api
-    tty: true
-    depends_on:
-      - postgres
-
   postgres:
     build:
       dockerfile: ./postgres/Dockerfile
-    container_name: postgres
+    container_name: bit_chat_app_postgres
     ports:
       - 5432:5432
     volumes:
@@ -28,10 +17,22 @@ services:
     restart: always
     stdin_open: true
 
-  reverse-proxy:
+  api:
+    build:
+      dockerfile: ./api/Dockerfile
+    container_name: bit_chat_app_api
+    ports:
+      - 7000:8080
+    hostname: api
+    tty: true
+    depends_on:
+      - postgres
+
+  nginx:
     image: nginx
+    container_name: bit_chat_app_nginx
     volumes:
-      - ./reverse-proxy/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     ports:
       - 80:80
     depends_on:

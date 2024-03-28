@@ -65,5 +65,7 @@ yarn-error.log
 # testing
 /coverage
 
-# firebase config
+# config
 firebase.config.js
+src/consts/env.json
+
