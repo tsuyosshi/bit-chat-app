@@ -10,12 +10,6 @@ import { RecoilRoot } from 'recoil';
 
 import Provider from './src/providers/Provider';
 
-export type StackProps = {
-  Home: undefined;
-  Signup: undefined;
-  Login: undefined;
-};
-
 function App(): React.JSX.Element {
   return (
     <RecoilRoot>

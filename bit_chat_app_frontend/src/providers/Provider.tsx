@@ -10,6 +10,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 
 import { useAuth } from '../hooks/auth/useAuth';
+import AddFriend from '../pages/addFriend';
 import Home from '../pages/home';
 import Login from '../pages/login';
 import Signup from '../pages/signup';
@@ -18,6 +19,7 @@ export type StackProps = {
   Home: undefined;
   Signup: undefined;
   Login: undefined;
+  AddFriend: undefined;
 };
 
 const Stack = createStackNavigator();
@@ -35,6 +37,7 @@ function Provider(): React.JSX.Element {
           <Stack.Screen name="Login" component={Login} />
         )}
         <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="AddFriend" component={AddFriend} />
       </Stack.Navigator>
     </NavigationContainer>
   );

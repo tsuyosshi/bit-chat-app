@@ -33,6 +33,9 @@ module.exports = {
     'unused-imports/no-unused-imports-ts': 'warn',
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['warn'],
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react-native/no-inline-styles': 'off',
   },
   settings: {
     react: {

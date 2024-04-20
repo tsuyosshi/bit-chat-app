@@ -3,8 +3,8 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-import { StackProps } from '../../App';
 import LoginForm from '../features/auth/LoginForm';
+import { StackProps } from '../providers/Provider';
 
 type LoginNavigationProp = NativeStackNavigationProp<StackProps, 'Login'>;
 
